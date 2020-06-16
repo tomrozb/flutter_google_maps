@@ -520,10 +520,8 @@ class GoogleMapState extends GoogleMapStateBase {
             .listen((event) => widget.onTap(event?.latLng?.toGeoCoord())));
         _subscriptions.add(_map.onRightclick.listen(
             (event) => widget.onLongPress(event?.latLng?.toGeoCoord())));
-        _subscriptions.add(_map.onZoomChanged.listen((event) {
-          print("LOG: ZOOM $event ${_map.zoom}");
-          widget.onZoomChanged(_map.zoom);
-        }));
+        _subscriptions.add(_map.onZoomChanged
+            .listen((event) => widget.onZoomChanged(_map.zoom)));
         return elem;
       });
     }
