@@ -473,7 +473,7 @@ class GoogleMapState extends gmap.GoogleMapStateBase {
   }
 
   @override
-  void moveCameraWithZoom(GeoCoord geoCoord, num zoom) {
+  void moveCameraWithZoom({GeoCoord geoCoord, num zoom}) {
     // TODO: implement moveCameraWithZoom
   }
 }
