@@ -27,6 +27,7 @@ class GoogleMap extends StatefulWidget {
     this.markers,
     this.onTap,
     this.onLongPress,
+    this.onZoomChanged,
     this.interactive = true,
     this.initialZoom = _zoom,
     this.mapType = MapType.roadmap,
@@ -76,6 +77,8 @@ class GoogleMap extends StatefulWidget {
 
   /// Called every time a [GoogleMap] is tapped.
   final ValueChanged<GeoCoord> onTap;
+
+  final ValueChanged<num> onZoomChanged;
 
   /// Markers to be placed on the map.
   final Set<Marker> markers;
