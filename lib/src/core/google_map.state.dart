@@ -101,4 +101,9 @@ class GoogleMapState extends GoogleMapStateBase {
 
   @override
   Widget build(BuildContext context) => throw UnimplementedError();
+
+  @override
+  void moveCameraWithZoom(GeoCoord geoCoord, num zoom) {
+    // TODO: implement moveCameraWithZoom
+  }
 }

@@ -72,6 +72,12 @@ class GoogleMapState extends GoogleMapStateBase {
   }
 
   @override
+  void moveCameraWithZoom(GeoCoord geoCoord, num zoom) {
+    _map.panTo(geoCoord.toLatLng());
+    _map.zoom = zoom;
+  }
+
+  @override
   void changeMapStyle(
     String mapStyle, {
     bool waitUntilReady = true,

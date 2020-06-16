@@ -471,4 +471,9 @@ class GoogleMapState extends gmap.GoogleMapStateBase {
 
     _controller = null;
   }
+
+  @override
+  void moveCameraWithZoom(GeoCoord geoCoord, num zoom) {
+    // TODO: implement moveCameraWithZoom
+  }
 }

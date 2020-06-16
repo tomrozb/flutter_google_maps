@@ -35,6 +35,8 @@ abstract class MapOperations implements MapMarkers, MapDirections, MapPolygons {
     bool waitUntilReady = true,
   });
 
+  void moveCameraWithZoom(GeoCoord geoCoord, num zoom);
+
   /// Sets the styling of the base map.
   ///
   /// Set to `null` to clear any previous custom styling.
