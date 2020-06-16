@@ -6,6 +6,7 @@ import 'package:flutter/widgets.dart';
 
 import 'package:google_directions_api/google_directions_api.dart'
     show GeoCoord, GeoCoordBounds;
+import 'package:google_maps/google_maps.dart' as maps;
 
 import 'map_items.dart';
 import 'google_map.dart';
@@ -41,7 +42,7 @@ class GoogleMapState extends GoogleMapStateBase {
       throw UnimplementedError();
 
   @override
-  void addMarkerRaw(
+  maps.Marker addMarkerRaw(
     GeoCoord position, {
     String label,
     String icon,
@@ -53,7 +54,7 @@ class GoogleMapState extends GoogleMapStateBase {
       throw UnimplementedError();
 
   @override
-  void addMarker(Marker marker) => throw UnimplementedError();
+  maps.Marker addMarker(Marker marker) => throw UnimplementedError();
 
   @override
   void addPolygon(

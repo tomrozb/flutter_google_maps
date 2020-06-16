@@ -91,7 +91,7 @@ class GoogleMapState extends GoogleMapStateBase {
   }
 
   @override
-  void addMarkerRaw(
+  Marker addMarkerRaw(
     GeoCoord position, {
     String label,
     String icon,
@@ -114,7 +114,7 @@ class GoogleMapState extends GoogleMapStateBase {
 
     final key = position.toString();
 
-    if (_markers.containsKey(key)) return;
+    if (_markers.containsKey(key)) return _markers[key];
 
     final marker = Marker()
       ..map = _map
@@ -168,10 +168,11 @@ class GoogleMapState extends GoogleMapStateBase {
     }
 
     _markers[key] = marker;
+    return marker;
   }
 
   @override
-  void addMarker(items.Marker marker) => addMarkerRaw(
+  Marker addMarker(items.Marker marker) => addMarkerRaw(
         marker.position,
         label: marker.label,
         icon: marker.icon,
