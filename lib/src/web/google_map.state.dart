@@ -67,6 +67,7 @@ class GoogleMapState extends GoogleMapStateBase {
     } else {
       _map.fitBounds(newBounds.toLatLngBounds());
     }
+    _map.zoom = 5.0;
   }
 
   @override
