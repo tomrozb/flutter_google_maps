@@ -63,9 +63,9 @@ class GoogleMapState extends GoogleMapStateBase {
     _map.center = newBounds.center.toLatLng();
 
     if (animated == true) {
-      _map.panToBounds(newBounds.toLatLngBounds());
+      //_map.panToBounds(newBounds.toLatLngBounds());
     } else {
-      _map.fitBounds(newBounds.toLatLngBounds());
+      //_map.fitBounds(newBounds.toLatLngBounds());
     }
     _map.zoom = 5.0;
   }
