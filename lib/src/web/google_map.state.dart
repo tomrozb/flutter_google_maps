@@ -60,7 +60,7 @@ class GoogleMapState extends GoogleMapStateBase {
       return true;
     }());
 
-    _map.center = newBounds.center.toLatLng();
+    //_map.center = newBounds.center.toLatLng();
 
     if (animated == true) {
       //_map.panToBounds(newBounds.toLatLngBounds());
