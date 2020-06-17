@@ -91,6 +91,7 @@ abstract class MapMarkers {
     GeoCoord position, {
     maps.MarkerLabel label,
     String icon,
+    maps.GSymbol iconSymbol,
     String info,
     String infoSnippet,
     ValueChanged<String> onTap,

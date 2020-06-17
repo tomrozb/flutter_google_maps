@@ -107,6 +107,7 @@ class GoogleMapState extends GoogleMapStateBase {
     GeoCoord position, {
     MarkerLabel label,
     String icon,
+    GSymbol iconSymbol,
     String info,
     String infoSnippet,
     ValueChanged<String> onTap,
@@ -131,7 +132,7 @@ class GoogleMapState extends GoogleMapStateBase {
     final marker = Marker()
       ..map = _map
       ..label = label
-      ..icon = _getImage(icon)
+      ..icon = iconSymbol == null ? _getImage(icon) : iconSymbol
       ..position = position.toLatLng();
 
     if (info != null || onTap != null) {
