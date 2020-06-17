@@ -93,7 +93,7 @@ class GoogleMapState extends GoogleMapStateBase {
   @override
   Marker addMarkerRaw(
     GeoCoord position, {
-    String label,
+    MarkerLabel label,
     String icon,
     String info,
     String infoSnippet,
@@ -230,10 +230,10 @@ class GoogleMapState extends GoogleMapStateBase {
   void addDirection(
     dynamic origin,
     dynamic destination, {
-    String startLabel,
+    MarkerLabel startLabel,
     String startIcon,
     String startInfo,
-    String endLabel,
+    MarkerLabel endLabel,
     String endIcon,
     String endInfo,
   }) {

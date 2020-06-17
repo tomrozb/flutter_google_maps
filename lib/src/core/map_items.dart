@@ -5,6 +5,7 @@
 import 'package:flutter/foundation.dart' show ValueChanged, VoidCallback;
 
 import 'package:google_directions_api/google_directions_api.dart' show GeoCoord;
+import 'package:google_maps/google_maps.dart';
 
 /// Marks a geographical location on the map.
 ///
@@ -27,7 +28,7 @@ class Marker {
   final GeoCoord position;
 
   /// [label] can be set only for `web`.
-  final String label;
+  final MarkerLabel label;
 
   /// If [icon] is set, must be a path to an image from project root
   /// as follows: `assets/images/image.png`. Or it must be an instance

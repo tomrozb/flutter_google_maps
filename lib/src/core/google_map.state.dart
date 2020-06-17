@@ -32,10 +32,10 @@ class GoogleMapState extends GoogleMapStateBase {
   void addDirection(
     origin,
     destination, {
-    String startLabel,
+    maps.MarkerLabel startLabel,
     String startIcon,
     String startInfo,
-    String endLabel,
+    maps.MarkerLabel endLabel,
     String endIcon,
     String endInfo,
   }) =>
@@ -44,7 +44,7 @@ class GoogleMapState extends GoogleMapStateBase {
   @override
   maps.Marker addMarkerRaw(
     GeoCoord position, {
-    String label,
+    maps.MarkerLabel label,
     String icon,
     String info,
     String infoSnippet,
