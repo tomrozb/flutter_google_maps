@@ -5,6 +5,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_google_maps/flutter_google_maps.dart';
+import 'package:google_maps/google_maps.dart' as maps;
 
 void main() {
   GoogleMap.init('API_KEY');
@@ -146,7 +147,9 @@ class _MyHomePageState extends State<MyHomePage> {
             GoogleMap.of(_key).addDirection(
               'San Francisco, CA',
               'San Jose, CA',
-              startLabel: '1',
+              startLabel: maps.MarkerLabel()
+              ..text = 'text'
+              ..color = 'white',
               startInfo: 'San Francisco, CA',
               endIcon: 'assets/images/map-marker-warehouse.png',
               endInfo: 'San Jose, CA',

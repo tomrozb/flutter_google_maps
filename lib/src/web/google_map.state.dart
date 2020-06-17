@@ -30,6 +30,7 @@ class GoogleMapState extends GoogleMapStateBase {
   final _polygons = <String, Polygon>{};
   final _subscriptions = <StreamSubscription>[];
   final _directions = <String, DirectionsRenderer>{};
+  final _imageCache = <String, String>{};
 
   GMap _map;
   MapOptions _mapOptions;
@@ -37,12 +38,23 @@ class GoogleMapState extends GoogleMapStateBase {
   String _getImage(String image) {
     if (image == null) return null;
 
-    if (utils.ByteString.isByteString(image)) {
-      final blob = Blob([utils.ByteString.fromString(image)], 'image/png');
-      return Url.createObjectUrlFromBlob(blob);
+    if (_imageCache.containsKey(image)) {
+      print("from cache");
+      return _imageCache[image];
     }
 
-    return '${fixAssetPath(image)}assets/$image';
+    if (utils.ByteString.isByteString(image)) {
+      print("isByteString");
+      final blob = Blob([utils.ByteString.fromString(image)], 'image/png');
+      final url = Url.createObjectUrlFromBlob(blob);
+      _imageCache[image] = url;
+      return url;
+    }
+
+    print("is NOT ByteString");
+    final path = '${fixAssetPath(image)}assets/$image';
+    _imageCache[image] = path;
+    return path;
   }
 
   @override
