@@ -39,19 +39,16 @@ class GoogleMapState extends GoogleMapStateBase {
     if (image == null) return null;
 
     if (_imageCache.containsKey(image)) {
-      print("from cache");
       return _imageCache[image];
     }
 
     if (utils.ByteString.isByteString(image)) {
-      print("isByteString");
       final blob = Blob([utils.ByteString.fromString(image)], 'image/png');
       final url = Url.createObjectUrlFromBlob(blob);
       _imageCache[image] = url;
       return url;
     }
 
-    print("is NOT ByteString");
     final path = '${fixAssetPath(image)}assets/$image';
     _imageCache[image] = path;
     return path;
@@ -535,6 +532,8 @@ class GoogleMapState extends GoogleMapStateBase {
             (event) => widget.onLongPress(event?.latLng?.toGeoCoord())));
         _subscriptions.add(_map.onZoomChanged
             .listen((event) => widget.onZoomChanged(_map.zoom)));
+        _subscriptions.add(_map.onBoundsChanged
+            .listen((event) => widget.onBoundsChanged(_map.bounds)));
         return elem;
       });
     }
