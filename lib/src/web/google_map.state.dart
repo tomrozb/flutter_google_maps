@@ -55,6 +55,9 @@ class GoogleMapState extends GoogleMapStateBase {
   }
 
   @override
+  GMap getMap() => _map;
+
+  @override
   void moveCamera(
     GeoCoordBounds newBounds, {
     double padding = 0,

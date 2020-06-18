@@ -183,4 +183,6 @@ abstract class MapPolygons {
 
   /// Removes all polygones from the map.
   void clearPolygons();
+
+  maps.GMap getMap();
 }
