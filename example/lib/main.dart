@@ -135,7 +135,7 @@ class _MyHomePageState extends State<MyHomePage> {
             );
             GoogleMap.of(_key).addMarkerRaw(
               GeoCoord(33.775513, -117.450257),
-              icon: 'assets/images/map-marker-warehouse.png',
+              icon: maps.Icon()..url = 'assets/images/map-marker-warehouse.png',
               info: contentString,
             );
           },
@@ -151,7 +151,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ..text = 'text'
               ..color = 'white',
               startInfo: 'San Francisco, CA',
-              endIcon: 'assets/images/map-marker-warehouse.png',
+              endIcon: maps.Icon()..url = 'assets/images/map-marker-warehouse.png',
               endInfo: 'San Jose, CA',
             );
           },

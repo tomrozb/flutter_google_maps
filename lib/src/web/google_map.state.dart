@@ -14,6 +14,7 @@ import 'package:flinq/flinq.dart';
 import 'package:google_maps/google_maps.dart';
 import 'package:google_directions_api/google_directions_api.dart'
     show GeoCoord, GeoCoordBounds;
+import 'package:google_maps/google_maps.dart' as maps;
 
 import 'utils.dart';
 import '../core/google_map.dart';
@@ -106,7 +107,7 @@ class GoogleMapState extends GoogleMapStateBase {
   Marker addMarkerRaw(
     GeoCoord position, {
     MarkerLabel label,
-    String icon,
+    maps.Icon icon,
     GSymbol iconSymbol,
     String info,
     String infoSnippet,
@@ -132,7 +133,7 @@ class GoogleMapState extends GoogleMapStateBase {
     final marker = Marker()
       ..map = _map
       ..label = label
-      ..icon = iconSymbol == null ? _getImage(icon) : iconSymbol
+      ..icon = iconSymbol == null ? icon : iconSymbol
       ..position = position.toLatLng();
 
     if (info != null || onTap != null) {
@@ -188,7 +189,7 @@ class GoogleMapState extends GoogleMapStateBase {
   Marker addMarker(items.Marker marker) => addMarkerRaw(
         marker.position,
         label: marker.label,
-        icon: marker.icon,
+        icon: maps.Icon()..url = _getImage(marker.icon),
         info: marker.info,
         infoSnippet: marker.infoSnippet,
         onTap: marker.onTap,
@@ -244,10 +245,10 @@ class GoogleMapState extends GoogleMapStateBase {
     dynamic origin,
     dynamic destination, {
     MarkerLabel startLabel,
-    String startIcon,
+    maps.Icon startIcon,
     String startInfo,
     MarkerLabel endLabel,
-    String endIcon,
+    maps.Icon endIcon,
     String endInfo,
   }) {
     assert(() {
@@ -298,7 +299,7 @@ class GoogleMapState extends GoogleMapStateBase {
                 } else {
                   addMarkerRaw(
                     startLatLng.toGeoCoord(),
-                    icon: 'assets/images/marker_a.png',
+                    icon: maps.Icon()..url = _getImage('assets/images/marker_a.png'),
                     info: leg.startAddress,
                   );
                 }
@@ -316,7 +317,7 @@ class GoogleMapState extends GoogleMapStateBase {
                 } else {
                   addMarkerRaw(
                     endLatLng.toGeoCoord(),
-                    icon: 'assets/images/marker_b.png',
+                    icon: maps.Icon()..url = _getImage('assets/images/marker_b.png'),
                     info: leg.endAddress,
                   );
                 }

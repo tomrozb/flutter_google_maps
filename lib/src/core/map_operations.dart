@@ -90,7 +90,7 @@ abstract class MapMarkers {
   maps.Marker addMarkerRaw(
     GeoCoord position, {
     maps.MarkerLabel label,
-    String icon,
+    maps.Icon icon,
     maps.GSymbol iconSymbol,
     String info,
     String infoSnippet,
@@ -125,10 +125,10 @@ abstract class MapDirections {
     dynamic origin,
     dynamic destination, {
     maps.MarkerLabel startLabel,
-    String startIcon,
+    maps.Icon startIcon,
     String startInfo,
     maps.MarkerLabel endLabel,
-    String endIcon,
+    maps.Icon endIcon,
     String endInfo,
   });
 
