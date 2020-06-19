@@ -180,6 +180,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 mapType: MapType.roadmap,
                 mapStyle: _mapStyle,
                 interactive: true,
+                onBoundsChanged: (value) {},
+                onZoomChanged: (value){},
                 onTap: (coord) =>
                     _scaffoldKey.currentState.showSnackBar(SnackBar(
                   content: Text(coord?.toString()),
