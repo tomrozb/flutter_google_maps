@@ -151,7 +151,7 @@ abstract class MapPolygons {
   /// Where [id] must be **unique**.
   ///
   /// If [id] have been already added, addition of a new polygon will be ignored.
-  void addPolygon(
+  maps.Polygon addPolygon(
     String id,
     Iterable<GeoCoord> points, {
     ValueChanged<String> onTap,

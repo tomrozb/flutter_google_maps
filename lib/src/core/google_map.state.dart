@@ -62,7 +62,7 @@ class GoogleMapState extends GoogleMapStateBase {
   maps.Marker addMarker(Marker marker) => throw UnimplementedError();
 
   @override
-  void addPolygon(
+  maps.Polygon addPolygon(
     String id,
     Iterable<GeoCoord> points, {
     ValueChanged<String> onTap,

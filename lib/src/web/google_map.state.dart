@@ -384,7 +384,7 @@ class GoogleMapState extends GoogleMapStateBase {
   }
 
   @override
-  void addPolygon(
+  Polygon addPolygon(
     String id,
     Iterable<GeoCoord> points, {
     ValueChanged<String> onTap,
@@ -435,6 +435,7 @@ class GoogleMapState extends GoogleMapStateBase {
         return polygon;
       },
     );
+    return _polygons[id];
   }
 
   @override
